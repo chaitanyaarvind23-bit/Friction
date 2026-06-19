@@ -1,19 +1,68 @@
- time--;
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Intentional Launch</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px;
+}
+
+#timer {
+    font-size: 72px;
+    margin: 30px;
+    font-weight: bold;
+}
+
+button {
+    font-size: 20px;
+    padding: 12px 24px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Why are you opening Instagram?</h1>
+
+<p>
+Message someone?<br>
+Check a specific account?<br>
+Or just bored?
+</p>
+
+<div id="timer">10</div>
+
+<button id="openBtn" disabled>
+Open Instagram
+</button>
+
+<script>
+let time = 10;
+
+const timer = document.getElementById("timer");
+const btn = document.getElementById("openBtn");
+
+const countdown = setInterval(() => {
+    time--;
     timer.textContent = time;
 
-    if(time <= 0){
+    if (time <= 0) {
         clearInterval(countdown);
         timer.textContent = "✓";
         btn.disabled = false;
     }
-
-},1000);
+}, 1000);
 
 btn.addEventListener("click", () => {
     window.location.href = "https://instagram.com";
 });
-
 </script>
 
 </body>
