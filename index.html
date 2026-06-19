@@ -1,0 +1,20 @@
+ time--;
+
+    timer.textContent = time;
+
+    if(time <= 0){
+        clearInterval(countdown);
+        timer.textContent = "✓";
+        btn.disabled = false;
+    }
+
+},1000);
+
+btn.addEventListener("click", () => {
+    window.location.href = "https://instagram.com";
+});
+
+</script>
+
+</body>
+</html>
